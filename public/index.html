@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Refer and Earn</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+            color: #333;
+        }
+
+        header {
+            background-color: #2dc2b7;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 36px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #ffcc00;
+        }
+
+        .banner {
+            background-color: #3d3d3d;
+            padding: 40px 0;
+            text-align: center;
+            color: #ffffff;
+        }
+
+        .banner h2 {
+            margin: 0;
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        .banner p {
+            margin: 17px;
+            font-size: 20px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #2dc2b7;
+            color: #fff;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #43a9a2;
+        }
+
+        section {
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        section h2 {
+            margin-top: 0;
+            font-size: 28px;
+            margin-bottom: 40px;
+            color: #2dc2b7;
+        }
+
+        section p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        section ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        section ul li {
+            flex: 0 0 calc(33.33% - 40px);
+            margin: 20px;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        section ul li:hover {
+            transform: translateY(-10px);
+        }
+
+        footer {
+            background-color: #2dc2b7;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 14px;
+        }
+
+        .share-links {
+            background-color: #0047ab;
+            color: #fff;
+            padding: 60px 0;
+        }
+
+        .share-links h2 {
+            margin: 0;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .share-links ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .share-links ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        .share-links ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 20px;
+            transition: color 0.3s ease;
+        }
+
+        .share-links ul li a:hover {
+            color: #ffcc00;
+        }
+
+        .refer {
+            background-color: #ffcc00;
+            padding: 60px 0;
+        }
+
+        .refer h2 {
+            margin: 0;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .refer p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .refer .refer-form {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .refer .refer-form input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .refer .refer-form input[type="submit"] {
+            background-color: #0047ab;
+            color: #fff;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .refer .refer-form input[type="submit"]:hover {
+            background-color: #00317a;
+        }
+
+        #faq{
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+        .faq-item{
+            width: 700px;
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .faq-item {
+            text-align: left;
+            margin-bottom: 10px;
+            /* text-align: left; */
+        }
+        .faq-question {
+            cursor: pointer;
+            margin: 0px;
+            font-size: medium;
+        }
+        .faq-answer {
+            display: none;
+            font-size: small;
+        }
+        #thank-you-message {
+            display: none;
+            margin-top: 20px;}
+            
+        #signup {
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        #signup-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        #signup-form label {
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 5px;
+        }
+        
+        #signup-form input[type="text"],
+        #signup-form input[type="number"],
+        #signup-form input[type="email"] {
+            width: 50%;
+            padding: 5px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+        #signup-form button[type="submit"] {
+            background-color: #2dc2b7;
+            color: #fff;
+            border: none;
+            padding: 7px 16px;
+            font-size: 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        #signup-form button[type="submit"]:hover {
+            background-color: #43a9a2;
+        }
+        @media only screen and (max-width: 600px) {
+    /* Adjust styles for small screens here */
+    /* Example: */
+    #signup-form input[type="text"],
+    #signup-form input[type="email"] {
+        width: 90%; /* Adjust width for smaller screens */
+    }
+    .faq-item{
+            width: 350px;
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        #signup {
+            max-width: 350px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+}
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Profit Innovators</h1>
+        <nav>
+            <ul>
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#benefits">Benefits</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#signup">Sign Up</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="banner">
+        <h2>Open Accounts and Earn Rewards!</h2>
+        <p>Start earning rewards for every successful activation.</p>
+        <a href="#signup" class="cta-button">Get Started</a>
+    </section>
+
+    <section id="how-it-works">
+        <h2>How It Works</h2>
+        <p>Share link with you clients and earn rewards:</p>
+        <ul>
+            <li>Create your Account</li>
+            <li>Share your unique link</li>
+            <li>Your client sign up</li>
+            <li>Earn commissions</li>
+        </ul>
+    </section>
+
+    <section id="benefits">
+        <h2>Benefits</h2>
+        <p>Explore the benefits of our program:</p>
+        <ul>
+            <li>Unlimited Accounts</li>
+            <li>Transparent Reporting</li>
+            <li>Diverse Compaigns</li>
+            <li>Rapid Payments</li>
+        </ul>
+    </section>
+
+    <section id="faq" class="style">
+        <h2>FAQ</h2>
+        <div class="faq-item">
+            <h3 class="faq-question">Is there a limit to how many accounts I can open?</h3>
+            <p class="faq-answer">No, there is no limit to the number of accounts you can open on our platform. Feel free to create multiple accounts to maximize your participation in various campaigns.</p>
+        </div>
+        <div class="faq-item">
+            <h3 class="faq-question">What is the minimum payout threshold?</h3>
+            <p class="faq-answer">There is no minimum payout threshold. You can request a payout at any time, regardless of the amount earned. We believe in providing flexibility and convenience to our partners.</p>
+        </div>
+        <div class="faq-item">
+            <h3 class="faq-question">How quickly will I receive my payments?</h3>
+            <p class="faq-answer">We strive to process payments promptly after verification, typically within 24-48 hours of your request. However, please note that processing times may vary depending on the payment method chosen and any potential verification requirements. Our priority is to ensure the security and accuracy of all transactions before disbursing payments to our partners.</p>
+        </div>
+        <div class="faq-item">
+            <h3 class="faq-question">Can I promote multiple campaigns simultaneously?</h3>
+            <p class="faq-answer">Yes, absolutely! You have the flexibility to promote multiple campaigns simultaneously. This allows you to diversify your efforts and maximize your earnings potential.</p>
+        </div>
+        <div class="faq-item">
+            <h3 class="faq-question">Is there a support team available to assist me?</h3>
+            <p class="faq-answer">Yes, we have a dedicated support team available to assist you with any questions or concerns you may have. Our team is committed to providing timely and helpful support to ensure your success.</p>
+        </div>
+        <!-- Add more FAQ items as needed -->
+    </section>
+
+    <section id="signup" class="style">
+        <h2>Sign Up</h2>
+        <p>Join our program and start earning today!</p>
+        <form id="signup-form" action="https://script.google.com/macros/s/AKfycbx_6bw-4YeTXZCwL8yv8TzutxgNxvFjVgzt5WSU39-7-bBFCkcp7NrhGhwUIPJhJuhc1A/exec" method="POST" onsubmit="submitForm(event)">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" pattern="[A-Za-z]{2,}" title="Please enter at least two alphabetical characters" required>
+
+            <label for="number">Number:</label>
+            <input type="text" id="number" name="number" pattern="[0-9]{10}" title="Please enter a 10-digit phone number" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br>
+    
+            <button type="submit" onclick="submitForm">Sign Up</button>
+        </form>
+
+        <div id="thank-you-message">
+            <h3>Thank you for signing up!</h3>
+            <p>We appreciate your interest. We'll be in touch with you soon.</p>
+        </div>
+    </section>
+
+
+    <script>
+        // JavaScript to toggle visibility of FAQ answers
+        const faqQuestions = document.querySelectorAll('.faq-question');
+
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+            });
+        });
+
+        function submitForm(event) {
+        event.preventDefault(); // Prevent default form submission behavior
+        
+        var form = document.getElementById('signup-form');
+        var formData = new FormData(form); // Create FormData object with form data
+
+        // Send form data to the server
+        fetch('https://script.google.com/macros/s/AKfycbx_6bw-4YeTXZCwL8yv8TzutxgNxvFjVgzt5WSU39-7-bBFCkcp7NrhGhwUIPJhJuhc1A/exec', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => {
+            if (response.ok) {
+                // If form submission is successful, hide form and show thank you message
+                form.style.display = 'none';
+                document.getElementById('thank-you-message').style.display = 'block';
+            } else {
+                throw new Error('Form submission failed.');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    }
+
+    </script>
+
+
+    <footer>
+        <p>&copy; 2024 Profit Innovators. All rights reserved.</p>
+    </footer>
+</body>
+</html>

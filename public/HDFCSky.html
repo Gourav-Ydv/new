@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting...</title>
+</head>
+<body>
+    <p>Redirecting...</p>
+    
+    <script>
+        fetch('https://script.google.com/macros/s/AKfycby9EiWKRFyzFBu1VSOLnrCw8M3cNSTZde-crUO9vVSHiRSFITJP5feUZxoUpxhzJ6cmdQ/exec')
+            .then(response => response.json())
+            .then(data => {
+                url3 = data[3]
+                if(url3.status==1)
+                {
+                    window.location.href = url3.url;
+                }
+                else{
+                    window.location.href = "/unavailable"
+                }
+            })
+            .catch(error => console.error('Error fetching data:', error));
+    </script>
+</body>
+</html>
