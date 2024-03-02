@@ -16,7 +16,7 @@ app.get('/MStock', (req, res) => {
 });
 
 app.get('/5Paisa', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', '5Paisa.html'));
+  res.sendFile('public/5Paisa.html', { root: __dirname });
 });
 
 app.get('/HDFCSky', (req, res) => {
