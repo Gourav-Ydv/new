@@ -8,11 +8,11 @@ app.use(express.static('public'));
 
 // Define custom route for template.html
 app.get('/AngelOne', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'Angelone.html'));
+  res.sendFile('public/AngelOne.html', { root: __dirname });
 });
 
 app.get('/MStock', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'MStock.html'));
+  res.sendFile('public/MStock.html', { root: __dirname });
 });
 
 app.get('/5Paisa', (req, res) => {
@@ -20,15 +20,15 @@ app.get('/5Paisa', (req, res) => {
 });
 
 app.get('/HDFCSky', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'HDFCSky.html'));
+  res.sendFile('public/HDFCSky.html', { root: __dirname });
 });
 
 app.get('/unavailable', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'msg.html'));
+  res.sendFile('public/msg.html', { root: __dirname });
 });
 
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+  res.sendFile('public/index.html', { root: __dirname });
 });
 
 // Start the server
